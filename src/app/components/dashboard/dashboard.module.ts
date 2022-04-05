@@ -5,6 +5,8 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 
 //El dashboard tambien compartira los modulos de Angular Material
 import { SharedModule } from '../shared/shared.module';
+
+//Componente propio
 import { DashboardComponent } from './dashboard.component';
 
 

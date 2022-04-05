@@ -10,12 +10,14 @@ import { SharedModule } from './components/shared/shared.module';
 
 //Componentes
 import { PresentationComponent } from './components/presentation/presentation.component';
+import { ErrorComponent } from './components/error/error.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PresentationComponent
+    PresentationComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
