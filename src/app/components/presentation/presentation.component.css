@@ -1,0 +1,28 @@
+.body{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    background-color: white;
+}
+.subheader{
+    color: mediumturquoise;
+}
+h1{ 
+    font-size: 34px;
+    font-weight: 900;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h2{
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+img{
+    width: 250px;
+    height: auto;
+}
+button:hover{
+    background-color: blue;
+}
