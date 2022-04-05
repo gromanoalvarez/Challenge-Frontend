@@ -1,4 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-presentation',
@@ -8,15 +9,15 @@ import { Component, OnDestroy } from '@angular/core';
 export class PresentationComponent implements OnDestroy{
   loading: boolean;
 
-  constructor() {
+  constructor(private router: Router) {
     this.loading = false;
   }
 
   changeTemplate(): void {
     this.loading = true;
     setTimeout(() => {
-      alert("redireccion");
-    }, 1000);
+      this.router.navigate(['dashboard']);
+    }, 500);
   }
 
   ngOnDestroy(): void {

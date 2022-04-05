@@ -1,27 +1,31 @@
-.body, .content-body{
+.content-body{
+    margin-top: 20vh;
+    max-width: 100%;
     display:flex;
     flex-direction: column;
-    justify-content: center;
-    height: 100%;
     align-items: center;
+    text-align: center;
     background-color: white;
 }
 .subheader{
     color: mediumturquoise;
 }
 h1{ 
-    font-size: 34px;
+    font-size: 2rem;
     font-weight: 900;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 h2{
-    font-size: 30px;
+    font-size: 1.8rem;
     font-weight: 700;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 img{
-    width: 250px;
+    width: 10rem;
     height: auto;
+}
+button{
+    text-align: center;
 }
 button:hover{
     background-color: blue;

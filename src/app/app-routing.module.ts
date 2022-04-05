@@ -6,8 +6,13 @@ import { PresentationComponent } from './components/presentation/presentation.co
 
 //Corre con <router-outlet/>
 const routes: Routes = [
-  { path: '', component: PresentationComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: '', redirectTo: 'presentation', pathMatch:'full'},
+  { path: 'presentation', component: PresentationComponent },
+  // Primera opcion:
+  // { path: 'dashboard', component: DashboardComponent },
+  // Segunda opcion: LAZY LOAD
+  { path: 'dashboard', loadChildren: () => import ('./components/dashboard/dashboard.module')
+  .then(x=>x.DashboardModule) },
   { path: '**', component: ErrorComponent }
 ];
 
@@ -16,3 +21,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+//49.05
