@@ -5,9 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-//Angular Material
-import {MatButtonModule} from '@angular/material/button';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+//Importa modulo donde se guardan modulos de Angular Material
+import { SharedModule } from './components/shared/shared.module';
 
 //Componentes
 import { PresentationComponent } from './components/presentation/presentation.component';
@@ -22,8 +21,7 @@ import { PresentationComponent } from './components/presentation/presentation.co
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatProgressSpinnerModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
