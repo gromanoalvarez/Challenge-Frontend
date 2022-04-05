@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Angular Material
 import {MatButtonModule} from '@angular/material/button';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 //Componentes
 import { PresentationComponent } from './components/presentation/presentation.component';
@@ -23,7 +23,7 @@ import { PresentationComponent } from './components/presentation/presentation.co
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

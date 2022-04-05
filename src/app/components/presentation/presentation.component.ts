@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-presentation',
   templateUrl: './presentation.component.html',
-  styleUrls: ['./presentation.component.css']
+  styleUrls: ['./presentation.component.css'],
 })
-export class PresentationComponent implements OnInit {
+export class PresentationComponent implements OnDestroy{
+  loading: boolean;
 
-  constructor() { }
+  constructor() {
+    this.loading = false;
+  }
 
-  ngOnInit(): void {
+  changeTemplate(): void {
+    this.loading = true;
+    setTimeout(() => {
+      alert("redireccion");
+    }, 1000);
+  }
+
+  ngOnDestroy(): void {
+    this.loading = false;
   }
 
 }

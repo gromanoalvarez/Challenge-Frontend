@@ -1,8 +1,12 @@
 <div class="body">
-  <h1>Challenge</h1>
-  <img src="../../../assets/images/diploma.gif" alt="Premio al Challenge" />
-  <div class="subheader">
-    <h2>FrontEnd - Angular</h2>
+  <div class="content-body" *ngIf="!loading">
+    <h1>Challenge</h1>
+    <img src="../../../assets/images/diploma.gif" alt="Premio al Challenge" />
+    <h2 class="subheader">FrontEnd - Angular</h2>
+    <button mat-raised-button color="primary" (click)="changeTemplate()">Ver Challenge</button>
   </div>
-  <button mat-raised-button color="primary">Ver Challenge</button>
+
+  <div *ngIf="loading">
+    <mat-spinner></mat-spinner>
+  </div>
 </div>
