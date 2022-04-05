@@ -1,16 +1,40 @@
-.card{
-    width: 70%;
-    margin: auto;
-    font-weight: bolder;
-    font-size: xx-large;
-    text-align: center;
-    border: none;
-    padding: 1rem;
-    background-color: mediumturquoise;
-    color: rgba(245, 245, 245, 0.535);
+.card {
+  width: 70%;
+  margin: auto;
+  font-weight: bolder;
+  font-size: xx-large;
+  text-align: center;
+  border: none;
+  padding: 1rem;
+  background-color: mediumturquoise;
+  color: rgba(245, 245, 245, 0.535);
 }
 table {
-    width: 90%;
-    margin: auto;
-
-  }
+  width: 90%;
+  margin: auto;
+}
+th .userId {
+  width: 5%;
+}
+th .id {
+  width: 5%;
+}
+th .title {
+  width: 10%;
+}
+th .body {
+  width: 70%;
+}
+th .comments {
+  width: 10%;
+}
+button{
+    background-color: darkslateblue;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+button:hover{
+    cursor: pointer;
+    background-color: mediumturquoise;
+}

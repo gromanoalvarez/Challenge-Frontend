@@ -13,6 +13,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 
 @NgModule({
   declarations: [],
@@ -25,7 +27,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     HttpClientModule,
     MatCardModule,
     MatTableModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatTooltipModule
   ],
   exports: [
     MatButtonModule,
@@ -35,7 +38,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     HttpClientModule,
     MatCardModule,
     MatTableModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatTooltipModule
   ]
 })
 export class SharedModule { }
