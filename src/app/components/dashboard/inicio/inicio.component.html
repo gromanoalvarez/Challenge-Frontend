@@ -1,1 +1,47 @@
-<p>soy la tabla</p>
+<br />
+<mat-card class="card mat-elevation-z9"> Principales Artículos</mat-card>
+<br />
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z5">
+  // body: "ea velit perferendis earum ut voluptatem voluptate itaque
+  iusto\ntotam pariatur in\nnemo voluptatem voluptatem autem magni tempora
+  minima in\nest distinctio qui assumenda accusamus dignissimos officia nesciunt
+  nobis" // id: 34 // title: "magnam ut rerum iure" // userId: 4
+
+  <ng-container matColumnDef="userId">
+    <th mat-header-cell *matHeaderCellDef>Usuario</th>
+    <td mat-cell *matCellDef="let element">{{ element.userId }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>Artículo No.</th>
+    <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef>Título</th>
+    <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="body">
+    <th mat-header-cell *matHeaderCellDef>Contenido</th>
+    <td mat-cell *matCellDef="let element">{{ element.body }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="comments">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element">
+      <button
+        mat-raised-button
+        color="primary"
+        matBadge="8"
+        matBadgePosition="after"
+        matBadgeColor="accent"
+      >
+        Comentarios
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
