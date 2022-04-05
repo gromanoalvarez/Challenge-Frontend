@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PostsService } from 'src/app/services/posts.service';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _postsServices: PostsService ) { }
 
   ngOnInit(): void {
+    this.cargarPosts();
+  }
+
+  cargarPosts(){
+    this._postsServices.getPost().subscribe( data => {
+      console.log(data);
+    });
   }
 
 }

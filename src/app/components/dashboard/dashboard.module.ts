@@ -8,11 +8,17 @@ import { SharedModule } from '../shared/shared.module';
 
 //Componente propio
 import { DashboardComponent } from './dashboard.component';
+import { InicioComponent } from './inicio/inicio.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { CreateComponent } from './create/create.component';
 
 
 @NgModule({
   declarations: [
-    DashboardComponent
+    DashboardComponent,
+    InicioComponent,
+    NavbarComponent,
+    CreateComponent
   ],
   imports: [
     CommonModule,
