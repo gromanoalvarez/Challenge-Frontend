@@ -1,24 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Posts } from 'src/app/interfaces/post';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css']
 })
-export class CreateComponent implements OnInit {
+export class CreateComponent {
 
-  titles: any[] =[
-    {text: "one", cols:3, rows:1, color: "lightblue"},
-    {text: "two", cols:1, rows:2, color: "lightgreen"},
-    {text: "three", cols:1, rows:1, color: "lightpink"},
-    {text: "four", cols:2, rows:1, color: "#dh3dh3"},
+  form: FormGroup;
+  id:number = 101;
 
+  constructor(private fb: FormBuilder, private _postsService: PostsService, private router: Router) {
+    this.form = this.fb.group({
+      userId: ['', Validators.required],
+      title: ['', Validators.required],
+      body: ['', Validators.required],
+    })
+   }
 
-  ];
+  agregarArticulo(){
+    // console.log(this.form);
 
-  constructor() { }
+    const post: Posts = {
+      userId: this.form.value.userId,
+      id: this.id,
+      title: this.form.value.title,
+      body: this.form.value.body,
+    }
+    this.id++;
 
-  ngOnInit(): void {
+    // console.log(post);
+    this._postsService.createPost(post);
+    this.router.navigate(['/dashboard/home']);
   }
-
 }

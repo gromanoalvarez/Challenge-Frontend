@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CreateComponent } from './create/create.component';
+import { FooterComponent } from '../footer/footer.component';
 
 
 @NgModule({
@@ -18,12 +19,15 @@ import { CreateComponent } from './create/create.component';
     DashboardComponent,
     InicioComponent,
     NavbarComponent,
-    CreateComponent
+    CreateComponent,
+    FooterComponent
+
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     SharedModule,
+
   ],
   exports: [
   ]

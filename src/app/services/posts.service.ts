@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+// import { Observable } from 'rxjs';
 import { Posts } from '../interfaces/post';
 
 @Injectable({
@@ -10,7 +10,7 @@ import { Posts } from '../interfaces/post';
 //Utilizacion de servicios: 1. Para hacer peticion http al backend 2. Para reutilizacion de codigo 3. Para comunicacion entre componentes
 export class PostsService {
 
-  posts: Posts[]= [
+  posts: Posts[] = [
     { id:1, body: 'aaaaaaaaaa',title:'aaaaaaa',userId:1},
     { id:2, body: 'bbbbbbb',title:'bbbbbb',userId:2},
     { id:3, body: 'ccc',title:'cc',userId:3},
@@ -34,5 +34,9 @@ export class PostsService {
   // }
   getPosts(){
     return this.posts.slice();
+  }
+
+  createPost(post: Posts){
+    this.posts.unshift(post);
   }
 }

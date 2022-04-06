@@ -19,6 +19,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatPaginatorModule,
     MatSortModule,
     MatGridListModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ReactiveFormsModule
+    
   ],
   exports: [
     MatButtonModule,
@@ -54,7 +58,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatPaginatorModule,
     MatSortModule,
     MatGridListModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ReactiveFormsModule
+
   ]
 })
 export class SharedModule { }
