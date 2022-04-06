@@ -9,24 +9,23 @@
   background-color: mediumturquoise;
   color: rgba(245, 245, 245, 0.535);
 }
-table {
+#table {
   width: 90%;
   margin: auto;
 }
-th .userId {
-  width: 5%;
+.mat-colim-userId{
+  width: 0.5em;
 }
-th .id {
-  width: 5%;
+.mat-colim-id{
+  width: 0.5em;
 }
-th .title {
-  width: 10%;
+.mat-column-title {
+  width: 20%;
+  padding-left: 16px;
+  font-size: 20px;
 }
-th .body {
+.mat-column-body {
   width: 70%;
-}
-th .comments {
-  width: 10%;
 }
 button{
     background-color: darkslateblue;

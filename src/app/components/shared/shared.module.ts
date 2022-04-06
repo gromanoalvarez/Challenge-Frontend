@@ -16,6 +16,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatInputModule} from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatBadgeModule,
     MatTooltipModule,
     MatInputModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSortModule 
   ],
   exports: [
     MatButtonModule,
@@ -45,7 +47,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatBadgeModule,
     MatTooltipModule,
     MatInputModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSortModule 
   ]
 })
 export class SharedModule { }
