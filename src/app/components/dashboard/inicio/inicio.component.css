@@ -1,14 +1,4 @@
-.card {
-  width: 70%;
-  margin: auto;
-  font-weight: bolder;
-  font-size: xx-large;
-  text-align: center;
-  border: none;
-  padding: 1rem;
-  background-color: mediumturquoise;
-  color: rgba(245, 245, 245, 0.535);
-}
+
 #table {
   width: 90%;
   margin: auto;

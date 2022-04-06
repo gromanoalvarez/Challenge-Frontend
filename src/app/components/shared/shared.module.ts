@@ -17,7 +17,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatInputModule} from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [],
@@ -34,7 +34,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatTooltipModule,
     MatInputModule,
     MatPaginatorModule,
-    MatSortModule 
+    MatSortModule,
+    MatGridListModule
   ],
   exports: [
     MatButtonModule,
@@ -48,7 +49,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatTooltipModule,
     MatInputModule,
     MatPaginatorModule,
-    MatSortModule 
+    MatSortModule,
+    MatGridListModule
   ]
 })
 export class SharedModule { }

@@ -1,0 +1,7 @@
+mat-grid-list{
+    width: 90%;
+    margin: auto;
+}
+mat-grid-tile {
+    background-color: mediumturquoise;
+  }
