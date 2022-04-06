@@ -1,14 +1,48 @@
 <br />
-<div class="container">
+<div >
     <mat-card class="card mat-elevation-z9"> Crear Artículo</mat-card>
 <br />
+<br />
+<br />
+
     <form >
-        <mat-grid-list cols="2" rowHeight="3em" gutterSize="0.5em" >
-            <mat-grid-tile  >1</mat-grid-tile>
-            <mat-grid-tile rowspan="4" >2</mat-grid-tile>
-            <mat-grid-tile  >3</mat-grid-tile>
-            <mat-grid-tile  >4</mat-grid-tile>
-            <mat-grid-tile  >5</mat-grid-tile>
-          </mat-grid-list>
+        <mat-grid-list cols="3" rowHeight="4em" gutterSize="0.5em" >
+            <mat-grid-tile colspan="1">
+                <mat-form-field style="margin-left: 20%; width: 70%;" >
+                    <mat-label >Usuario</mat-label>
+                    <input matInput autocomplete="off">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="1" >Publicación nro: </mat-grid-tile>
+            <mat-grid-tile colspan="1" rowspan="6">
+                <img src="../../../../assets/images/documento.gif" alt="Relleno de campos">
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2" >
+                <mat-form-field >
+                    <mat-label>Title</mat-label>
+                    <input matInput autocomplete="off">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2" rowspan="3">
+                <mat-form-field >
+                    <mat-label>Body</mat-label>
+                    <textarea matInput autocomplete="off" rows="10"></textarea>
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2" >
+                <button mat-raised-button color="primary">Publicar</button>
+            </mat-grid-tile>
+
+        <!-- <mat-grid-list cols="4" rowHeight="3em" gutterSize="0.5em" >
+            <mat-grid-tile  
+                *ngFor="let title of titles"
+                [colspan]="title.cols"
+                [rowspan]="title.rows"
+                [style.backround]="title.color"
+            > {{title.text}}
+            </mat-grid-tile> -->
+
+        </mat-grid-list>
     </form>
 </div>
+<br>

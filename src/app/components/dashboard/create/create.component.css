@@ -4,4 +4,32 @@ mat-grid-list{
 }
 mat-grid-tile {
     background-color: mediumturquoise;
+    border-radius: 5px;
+    color:teal;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family:Georgia, 'Times New Roman', Times, serif;
   }
+
+  mat-form-field{
+      width: 80%;
+      margin: auto;
+      color:darkslateblue;
+      font-size: 1.5rem;
+      font-weight: 500;
+      font-family:Georgia, 'Times New Roman', Times, serif;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+}
+button{
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    font-weight: 900;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+button:hover{
+    background-color: darkslateblue;
+}

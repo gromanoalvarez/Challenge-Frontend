@@ -15,9 +15,11 @@ import {MatTableModule} from '@angular/material/table';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatInputModule} from '@angular/material/input';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 @NgModule({
   declarations: [],
@@ -35,7 +37,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatInputModule,
     MatPaginatorModule,
     MatSortModule,
-    MatGridListModule
+    MatGridListModule,
+    MatFormFieldModule
   ],
   exports: [
     MatButtonModule,
@@ -50,7 +53,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatInputModule,
     MatPaginatorModule,
     MatSortModule,
-    MatGridListModule
+    MatGridListModule,
+    MatFormFieldModule
   ]
 })
 export class SharedModule { }
