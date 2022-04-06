@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { PostsService } from 'src/app/services/posts.service';
 
 export interface Posts {
@@ -18,12 +20,18 @@ const ELEMENT_DATA: Posts[] = [];
 export class InicioComponent implements OnInit {
 
   displayedColumns: string[] = ['userId', 'id', 'title', 'body', 'comments'];
-  dataSource = ELEMENT_DATA;
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
 
-  constructor(private _postsServices: PostsService) { }
+    @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  constructor(private _postsServices: PostsService) {
+    this.cargarPosts();
+   }
 
   ngOnInit(): void {
-    this.cargarPosts();
+  }
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
   }
 
   cargarPosts(){

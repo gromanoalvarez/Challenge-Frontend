@@ -14,6 +14,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatInputModule} from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatCardModule,
     MatTableModule,
     MatBadgeModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatInputModule,
+    MatPaginatorModule
   ],
   exports: [
     MatButtonModule,
@@ -39,7 +43,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatCardModule,
     MatTableModule,
     MatBadgeModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatInputModule,
+    MatPaginatorModule
   ]
 })
 export class SharedModule { }

@@ -23,7 +23,9 @@ import { CreateComponent } from './create/create.component';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    SharedModule
+    SharedModule,
+  ],
+  exports: [
   ]
 })
 export class DashboardModule { }
