@@ -4,15 +4,6 @@
                 <br />
     <form [formGroup]="form" (ngSubmit)="agregarArticulo()">
         <mat-grid-list cols="2" rowHeight="3em" gutterSize="0.5em" >
-            <mat-grid-tile colspan="1">
-                <mat-form-field style="margin-left: 20%; width: 70%;" >
-                    <mat-label >Usuario</mat-label>
-                    <input matInput autocomplete="off" formControlName="userId">
-                </mat-form-field>
-            </mat-grid-tile>
-            <mat-grid-tile colspan="1" >
-                Publicación nro:{{id}} 
-            </mat-grid-tile>
             <mat-grid-tile colspan="2" >
                 <mat-form-field >
                     <mat-label>Title</mat-label>

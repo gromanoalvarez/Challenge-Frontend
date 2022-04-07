@@ -11,30 +11,30 @@ import { PostsService } from 'src/app/services/posts.service';
 })
 export class CreateComponent {
 
-  form: FormGroup;
-  id:number = 101;
+  public form: FormGroup;
+  public numberRandom!: number;
 
   constructor(private fb: FormBuilder, private _postsService: PostsService, private router: Router) {
     this.form = this.fb.group({
-      userId: ['', Validators.required],
       title: ['', Validators.required],
       body: ['', Validators.required],
-    })
-   }
+    });
+  }
 
   agregarArticulo(){
-    // console.log(this.form);
-
+    let userId = this.generateIdRandom();
     const post: Posts = {
-      userId: this.form.value.userId,
-      id: this.id,
+      userId: userId,
       title: this.form.value.title,
       body: this.form.value.body,
     }
-    this.id++;
-
-    // console.log(post);
     this._postsService.createPost(post);
+    alert("retorno de id");
     this.router.navigate(['/dashboard/home']);
+  }
+
+  generateIdRandom(): number {
+    this.numberRandom = (Math.random() * 1000);
+    return this.numberRandom;
   }
 }

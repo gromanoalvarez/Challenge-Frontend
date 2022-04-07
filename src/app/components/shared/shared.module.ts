@@ -20,6 +20,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -41,8 +42,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatSortModule,
     MatGridListModule,
     MatFormFieldModule,
-    ReactiveFormsModule
-    
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   exports: [
     MatButtonModule,
@@ -59,8 +60,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatSortModule,
     MatGridListModule,
     MatFormFieldModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    MatDialogModule
   ]
 })
 export class SharedModule { }
