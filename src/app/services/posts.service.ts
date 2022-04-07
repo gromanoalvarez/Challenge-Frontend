@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-// import { Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Posts } from '../interfaces/post';
 
 @Injectable({
@@ -29,12 +29,12 @@ export class PostsService {
     this.endpoint = 'https://jsonplaceholder.typicode.com/posts';
   }
 
-  // getPost(): Observable<any> {
-  //   // this.posts = this.http.get(this.endpoint);
-  // }
-  getPosts(){
-    return this.posts.slice();
+  getPost(): Observable<any> {
+    return this.http.get(this.endpoint);
   }
+  // getPosts(){
+  //   return this.posts.slice();
+  // }
 
   createPost(post: Posts){
     this.posts.unshift(post);

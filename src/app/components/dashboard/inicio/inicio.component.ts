@@ -12,24 +12,21 @@ import { Posts } from 'src/app/interfaces/post';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
-
   listPosts: Posts[]= [];
-
   displayedColumns: string[] = ['userId', 'id', 'title', 'body', 'comments'];
   dataSource!: MatTableDataSource<any>;
-
-    @ViewChild(MatPaginator) paginator!: MatPaginator;
-    @ViewChild(MatSort) sort!: MatSort;
-
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private _postsServices: PostsService, private _liveAnnouncer: LiveAnnouncer) {}
 
   ngOnInit(): void {
     this.cargarPosts();
   }
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+
+  activateTable() {
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
   }
 
   announceSortChange(sortState: Sort) {
@@ -41,23 +38,11 @@ export class InicioComponent implements OnInit {
   }
 
   cargarPosts(){
-    this.listPosts = this._postsServices.getPosts();
-    this.dataSource = new  MatTableDataSource(this.listPosts);
+    this._postsServices.getPost().subscribe( data => {
+        this.listPosts = data;
+        this.dataSource = new  MatTableDataSource(this.listPosts);
+        this.activateTable();
+    });
   }
-
-  // cargarPosts(){
-  //     // console.log(data);
-  //     //   body: "ea velit perferendis earum ut voluptatem voluptate itaque iusto\ntotam pariatur in\nnemo voluptatem voluptatem autem magni tempora minima in\nest distinctio qui assumenda accusamus dignissimos officia nesciunt nobis"
-  //     //   id: 34
-  //     //   title: "magnam ut rerum iure"
-  //     //   userId: 4
-  //   this._postsServices.getPost().subscribe( data => {
-  //     this.dataSource = data;
-  //   });
-  // }
-
-
-
-
 
 }
