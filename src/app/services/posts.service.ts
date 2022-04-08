@@ -45,4 +45,8 @@ export class PostsService {
     return this.http.post(this.endpoint, post);
   }
 
+  getComments():Observable<any>{
+    return this.http.get('https://jsonplaceholder.typicode.com/posts/3/comments');
+  }
+
 }

@@ -33,7 +33,7 @@
     <ng-container matColumnDef="comments">
       <th class="comments" mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let element">
-        <button matTooltip="Ver comentarios" >
+        <button matTooltip="Ver comentarios" (click)="openDialog()">
           <mat-icon matBadge="15" matBadgeColor="warn">comments</mat-icon>
         </button>
       </td>
@@ -52,3 +52,5 @@
   >
   </mat-paginator>
 </div>
+
+
