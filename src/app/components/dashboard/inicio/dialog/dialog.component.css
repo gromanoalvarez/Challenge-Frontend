@@ -1,0 +1,11 @@
+button{
+    background-color: darkslateblue;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+}
+button:hover{
+    cursor: pointer;
+    background-color: mediumturquoise;
+}

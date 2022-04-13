@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Posts } from 'src/app/interfaces/post';
+import { PostsI } from 'src/app/interfaces/posts';
 import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
@@ -21,19 +21,20 @@ export class CreateComponent {
     });
   }
 
-  agregarArticulo(){
-    let userId = this.generateIdRandom();
-    const post: Posts = {
+  createNewArticle(){
+    let userId = this.generateRandomId();
+    const post: PostsI = {
       userId: userId,
+      id:0,
       title: this.form.value.title,
       body: this.form.value.body,
     }
     this._postsService.createPost(post);
-    alert("retorno de id");
+    alert("retorno de id"+ post.id);
     this.router.navigate(['/dashboard/home']);
   }
 
-  generateIdRandom(): number {
+  generateRandomId(): number {
     this.numberRandom = (Math.random() * 1000);
     return this.numberRandom;
   }

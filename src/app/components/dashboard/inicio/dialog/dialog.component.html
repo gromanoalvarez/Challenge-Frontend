@@ -1,0 +1,19 @@
+             <div>
+
+              <h1 mat dialog-title >Comentarios: </h1>
+
+                  <div mat-dialog-content >
+                    <ul *ngFor="let comment of data.comments; index as i">
+                      <li>
+                        <strong> {{i+1}} _ {{comment.name}} </strong>
+                        <p> {{comment.body}} </p>
+                        <span> {{comment.email}} </span>
+                        <hr>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div mat-dialog-actions>
+                    <button mat-button (click)="onNoClick()">Volver</button>
+                  </div>
+              </div>

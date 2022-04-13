@@ -1,16 +1,13 @@
-import { Component,  Inject,  OnInit, ViewChild } from '@angular/core';
+import { Component,  Inject,  Input,  OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { PostsService } from 'src/app/services/posts.service';
 import {LiveAnnouncer} from '@angular/cdk/a11y';
-import { Posts } from 'src/app/interfaces/post';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-
-export interface DialogData {
-  title: string;
-  comments: any[];
-}
+import { PostsI } from 'src/app/interfaces/posts';
+import { CommentsI } from 'src/app/interfaces/comments';
+import {MatDialog} from '@angular/material/dialog';
+import { DialogOverviewExampleDialog } from './dialog/dialog.component';
 
 @Component({
   selector: 'app-inicio',
@@ -18,7 +15,9 @@ export interface DialogData {
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
-  listPosts: Posts[]= [];
+  listPosts: PostsI[]= [];
+  comments: CommentsI[] = [];
+
   displayedColumns: string[] = ['userId', 'id', 'title', 'body', 'comments'];
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -44,48 +43,23 @@ export class InicioComponent implements OnInit {
   }
 
   cargarPosts(){
-    this._postsServices.getPost().subscribe( data => {
-        this.listPosts = data;
+    this._postsServices.getPost().subscribe( response => {
+        this.listPosts = response;
         this.dataSource = new  MatTableDataSource(this.listPosts);
         this.activateTable();
     });
   }
 
-  openDialog(): void {
-    let comments: any[];
-    this._postsServices.getComments().subscribe(resp => comments = resp );
-    setTimeout(() => {
+  openDialog(id:number): void {
+
+    this._postsServices.getComments(id).subscribe( resp => {
       const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
         width: '75%',
-        data: {title: "Comentarios: ", comments: comments},
-      });
-      dialogRef.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
-      });
-    }, 1000);
+        data: { comments : resp } 
+        });
+    });
   }
+
+
 }
 
-@Component({
-  selector: 'dialog-overview-example-dialog',
-  template: `
-              <div>
-                  <h1 mat-dialog-title>{{data.title}}</h1>
-                  <p>{{data.comments}}</p>
-                  <div mat-dialog-actions>
-                    <button mat-button (click)="onNoClick()">Volver</button>
-                  </div>
-              </div>
-
-              `,
-})
-export class DialogOverviewExampleDialog {
-  constructor(
-    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData,
-  ) {}
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-}

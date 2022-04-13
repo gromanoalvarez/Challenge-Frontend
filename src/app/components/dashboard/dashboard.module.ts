@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 
@@ -12,6 +11,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CreateComponent } from './create/create.component';
 import { FooterComponent } from '../footer/footer.component';
+import { DialogOverviewExampleDialog } from './inicio/dialog/dialog.component'
 
 
 @NgModule({
@@ -20,11 +20,11 @@ import { FooterComponent } from '../footer/footer.component';
     InicioComponent,
     NavbarComponent,
     CreateComponent,
-    FooterComponent
+    FooterComponent,
+    DialogOverviewExampleDialog
 
   ],
   imports: [
-    CommonModule,
     DashboardRoutingModule,
     SharedModule,
 

@@ -1,7 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Posts } from '../interfaces/post';
+import { environment } from 'src/environments/environment';
+import { CommentsI } from '../interfaces/comments';
+import { PostsI } from '../interfaces/posts';
+
 
 @Injectable({
   providedIn: 'root'
@@ -27,11 +30,11 @@ export class PostsService {
   endpoint:string;
 
   constructor(private http: HttpClient) { 
-    this.endpoint = 'https://jsonplaceholder.typicode.com/posts';
+    this.endpoint = environment.urlAPI + 'posts/';
   }
 
-  getPost(): Observable<any> {
-    return this.http.get(this.endpoint);
+  getPost(): Observable<PostsI[]> {
+    return this.http.get<PostsI[]>(this.endpoint);
   }
   // getPosts(){
   //   return this.posts.slice();
@@ -41,12 +44,12 @@ export class PostsService {
   //   this.posts.unshift(post);
   // }
 
-  createPost(post: Posts){
+  createPost(post: PostsI){
     return this.http.post(this.endpoint, post);
   }
 
-  getComments():Observable<any>{
-    return this.http.get('https://jsonplaceholder.typicode.com/posts/3/comments');
+  getComments(id:number):Observable<CommentsI[]>{
+    return this.http.get<CommentsI[]>(this.endpoint+ id+'/comments');
   }
 
 }

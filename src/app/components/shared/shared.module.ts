@@ -19,7 +19,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { ReactiveFormsModule } from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 
 
@@ -46,6 +46,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatDialogModule
   ],
   exports: [
+    CommonModule,
     MatButtonModule,
     MatProgressSpinnerModule,
     MatToolbarModule,
