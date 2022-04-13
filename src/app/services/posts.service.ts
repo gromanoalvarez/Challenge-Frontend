@@ -13,6 +13,26 @@ import { PostsI } from '../interfaces/posts';
 //Utilizacion de servicios: 1. Para hacer peticion http al backend 2. Para reutilizacion de codigo 3. Para comunicacion entre componentes
 export class PostsService {
 
+  endpoint:string;
+
+  constructor(private http: HttpClient) { 
+    this.endpoint = environment.urlAPI + 'posts/';
+  }
+
+  getPost(): Observable<PostsI[]> {
+    return this.http.get<PostsI[]>(this.endpoint);
+  }
+
+  createPost(post: PostsI):Observable<PostsI>{
+    return this.http.post<PostsI>(this.endpoint, post);
+  }
+
+  getComments(id:number):Observable<CommentsI[]>{
+    return this.http.get<CommentsI[]>(this.endpoint+ id+'/comments');
+  }
+
+
+  //Probando...
   // posts: Posts[] = [
   //   { id:1, body: 'aaaaaaaaaa',title:'aaaaaaa',userId:1},
   //   { id:2, body: 'bbbbbbb',title:'bbbbbb',userId:2},
@@ -27,29 +47,11 @@ export class PostsService {
   //   { id:11, body: 'k',title:'k',userId:11},
   // ];
 
-  endpoint:string;
-
-  constructor(private http: HttpClient) { 
-    this.endpoint = environment.urlAPI + 'posts/';
-  }
-
-  getPost(): Observable<PostsI[]> {
-    return this.http.get<PostsI[]>(this.endpoint);
-  }
-  // getPosts(){
+    // getPosts(){
   //   return this.posts.slice();
   // }
 
   // createPost(post: Posts){
   //   this.posts.unshift(post);
   // }
-
-  createPost(post: PostsI){
-    return this.http.post(this.endpoint, post);
-  }
-
-  getComments(id:number):Observable<CommentsI[]>{
-    return this.http.get<CommentsI[]>(this.endpoint+ id+'/comments');
-  }
-
 }

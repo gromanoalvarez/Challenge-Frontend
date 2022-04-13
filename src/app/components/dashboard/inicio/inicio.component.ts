@@ -26,7 +26,7 @@ export class InicioComponent implements OnInit {
   constructor(private _postsServices: PostsService, private _liveAnnouncer: LiveAnnouncer, public dialog: MatDialog) {}
 
   ngOnInit(): void {
-    this.cargarPosts();
+    this.getAllPosts();
   }
 
   activateTable() {
@@ -42,7 +42,7 @@ export class InicioComponent implements OnInit {
     }
   }
 
-  cargarPosts(){
+  getAllPosts(){
     this._postsServices.getPost().subscribe( response => {
         this.listPosts = response;
         this.dataSource = new  MatTableDataSource(this.listPosts);
@@ -51,7 +51,6 @@ export class InicioComponent implements OnInit {
   }
 
   openDialog(id:number): void {
-
     this._postsServices.getComments(id).subscribe( resp => {
       const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
         width: '75%',

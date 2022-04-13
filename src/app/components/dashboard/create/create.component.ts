@@ -29,13 +29,15 @@ export class CreateComponent {
       title: this.form.value.title,
       body: this.form.value.body,
     }
-    this._postsService.createPost(post);
-    alert("retorno de id"+ post.id);
-    this.router.navigate(['/dashboard/home']);
+    this._postsService.createPost(post).subscribe( resp => {
+      console.log(resp);
+      alert("Publicación exitosa, id: " + resp.id);
+      this.router.navigate(['/dashboard/home']);
+    });
   }
 
   generateRandomId(): number {
-    this.numberRandom = (Math.random() * 1000);
+    this.numberRandom = Math.floor(Math.random() * (1000-1))+1;
     return this.numberRandom;
   }
 }
