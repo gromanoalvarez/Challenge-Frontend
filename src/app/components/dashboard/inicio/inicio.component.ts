@@ -15,10 +15,9 @@ import { DialogOverviewExampleDialog } from './dialog/dialog.component';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
-  listPosts: PostsI[]= [];
+  listPosts!: PostsI[];
   comments: CommentsI[] = [];
-
-  displayedColumns: string[] = ['userId', 'id', 'title', 'body', 'comments'];
+  displayedColumns: string[] = ['title', 'body', 'comments'];
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;

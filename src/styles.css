@@ -24,7 +24,7 @@ body{
     border: none;
     padding: 1rem;
     background-color: mediumturquoise;
-    color: teal;
+    color: darkslateblue;
   }
   .example-spacer {
     flex: 1 1 auto;

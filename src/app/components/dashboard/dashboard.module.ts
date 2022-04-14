@@ -10,9 +10,7 @@ import { DashboardComponent } from './dashboard.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CreateComponent } from './create/create.component';
-import { FooterComponent } from '../footer/footer.component';
 import { DialogOverviewExampleDialog } from './inicio/dialog/dialog.component'
-
 
 @NgModule({
   declarations: [
@@ -20,8 +18,7 @@ import { DialogOverviewExampleDialog } from './inicio/dialog/dialog.component'
     InicioComponent,
     NavbarComponent,
     CreateComponent,
-    FooterComponent,
-    DialogOverviewExampleDialog
+    DialogOverviewExampleDialog,
 
   ],
   imports: [

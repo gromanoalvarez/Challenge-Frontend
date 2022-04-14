@@ -4,3 +4,6 @@
 mat-toolbar button:hover{
     background-color: cornflowerblue;
 }
+mat-icon{
+    color: turquoise !important;
+}

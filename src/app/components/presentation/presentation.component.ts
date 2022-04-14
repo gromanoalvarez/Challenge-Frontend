@@ -1,6 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-presentation',
   templateUrl: './presentation.component.html',

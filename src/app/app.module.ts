@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { PresentationComponent } from './components/presentation/presentation.component';
 import { ErrorComponent } from './components/error/error.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -34,8 +34,8 @@ export class CreateComponent {
       title: this.form.value.title,
       body: this.form.value.body,
     };
-    console.log(post);
     this._postsService.createPost(post).subscribe((resp) => {
+      console.log(resp);
       this._snackBar.open("Publicación exitosa nro.: " + resp.id, "Cerrar");
       this.router.navigate(['/dashboard/home']);
     });
