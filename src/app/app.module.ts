@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { PresentationComponent } from './components/presentation/presentation.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 
 @NgModule({
   declarations: [
