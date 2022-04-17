@@ -1,36 +1,34 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment.prod';
 import { CommentsI } from '../interfaces/comments';
 import { PostsI } from '../interfaces/posts';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 
 //Utilizacion de servicios: 1. Para hacer peticion http al backend 2. Para reutilizacion de codigo 3. Para comunicacion entre componentes
 export class PostsService {
+  endpoint: string;
+  urlAPI: string;
 
-  endpoint:string;
-
-  constructor(private http: HttpClient) { 
-    this.endpoint = environment.urlAPI + 'posts/';
+  constructor(private http: HttpClient) {
+    this.urlAPI = 'https://jsonplaceholder.typicode.com/';
+    this.endpoint = this.urlAPI + 'posts/';
   }
 
   getPost(): Observable<PostsI[]> {
     return this.http.get<PostsI[]>(this.endpoint);
   }
 
-  createPost(post: PostsI):Observable<PostsI>{
+  createPost(post: PostsI): Observable<PostsI> {
     return this.http.post<PostsI>(this.endpoint, post);
   }
 
-  getComments(id:number):Observable<CommentsI[]>{
-    return this.http.get<CommentsI[]>(this.endpoint+ id+'/comments');
+  getComments(id: number): Observable<CommentsI[]> {
+    return this.http.get<CommentsI[]>(this.endpoint + id + '/comments');
   }
-
 
   //Probando...
   // posts: Posts[] = [
@@ -47,7 +45,7 @@ export class PostsService {
   //   { id:11, body: 'k',title:'k',userId:11},
   // ];
 
-    // getPosts(){
+  // getPosts(){
   //   return this.posts.slice();
   // }
 
